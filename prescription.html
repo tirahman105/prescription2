@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta content="IE=edge" http-equiv="X-UA-Compatible">
+                <title>
+                    Prescription
+                </title>
+                <link href="pstyle.css" rel="stylesheet">
+                </link>
+                <!-- font awsome  -->
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+                    <!-- google font -->
+                    <link href="https://fonts.googleapis.com" rel="preconnect">
+                        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+                            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+                            </link>
+                        </link>
+                    </link>
+                </link>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="header-left">
+                <h4> <span id="user" class="message">Hello, < email-id ></Email-id></span></h4>
+                <button class="btn btn-danger" onclick="logout()">Logout</button>
+                </div>
+                <div class="header-right">
+                    <h1 class="heading">
+                        Dr. Md. Tareq Ibna Rahman
+                    </h1>
+                    <p class="text">
+                        BDS, PGT
+                    </p>
+                    <p class="text">
+                        Lecturer
+                    </p>
+                    <p class="text">
+                        Department of Conservative Dentistry & Endodontics
+                    </p>
+                    <p class="text">
+                        Pioneer Dental College & Hospital
+                    </p>
+                    <p class="text">
+                        BM&DC;: 8092
+                    </p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main-body">
+                <!-- patient details -->
+                <div class="patient-details">
+                    <form action="#">
+                        <div class="pt-details">
+                            <label for="name">
+                                Patien's Name
+                            </label>
+                            <input class="p-input" id="name" name="name" placeholder="Patient's Name" type="text">
+                                <label for="age">
+                                    Age
+                                </label>
+                                <input class="p-input age" id="age" name="age" placeholder="age" type="number">
+                                    <label for="gender">
+                                        Gender
+                                    </label>
+                                     <input class="p-input" id="gender" name="gender" placeholder="Type Gender" type="text">
+
+                                    <!-- <select id="gender" name="gender">
+                                        <option value="male">
+                                            Male
+                                        </option>
+                                        <option value="female">
+                                            Female
+                                        </option>
+                                        <option value="other">
+                                            Other
+                                        </option>
+                                    </select> -->
+                                    <label class="label_date" for="date">
+                                        Date
+                                    </label>
+                                    <input class="p-input" id="date" name="date" type="date">
+                                        <!-- <input type="submit" value="Submit">
+                                        </input> -->
+                                    </input>
+                                </input>
+                            </input>
+                        </div>
+                        <br>
+                            <hr>
+                                <div class="p-body">
+                                    <div class="p-left">
+                                        <label for="cc">
+                                            Chief complaints
+                                        </label>
+                                        <br>
+                                            <br>
+                                                <textarea cols="30" id="cc" name="cc" rows="10">
+                                                </textarea>
+                                            </br>
+                                            <br>
+                                                <label for="oe">
+                                                    O/E
+                                                </label>
+                                                <br>
+                                                    <textarea cols="30" id="cc" name="cc" rows="10">
+                                                    </textarea>
+                                                </br>
+                                            </br>
+                                             <label for="inv">
+                                                    Inv
+                                                </label>
+                                                <br>
+                                                    <textarea cols="30" id="cc" name="cc" rows="10">
+                                                    </textarea>
+                                                </br>
+                                            </br>
+                                             <label for="adv">
+                                                    Adv
+                                                </label>
+                                                <br>
+                                                    <textarea cols="30" id="cc" name="cc" rows="10">
+                                                    </textarea>
+                                                </br>
+                                            </br>
+                                        </br>
+                                    </div>
+                                    <div class="pmid">
+                                        .
+                                    </div>
+                                    <div class="p-right">
+                                        <h1>
+                                            Rx,
+                                        </h1>
+                                        <form action="">
+                                            <input id="text" name="text" type="text">
+                                                <button class="btn-list" type="submit">
+                                                    <i area-hidden="true" class="fa fa-plus">
+                                                    </i>
+                                                </button>
+                                            </input>
+                                        </form>
+                                        <div class="container">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </hr>
+                        </br>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+        <script>
+            const inputText = document.querySelector('#text');
+            const myButton = document.querySelector('.btn-list');
+            const list = document.querySelector('.container ul');
+            myButton.addEventListener('click',(e)=>{
+                if(inputText.value != ""){
+                    e.preventDefault();
+                    // create Li
+                    const myLi = document.createElement('li');
+                    myLi.innerHTML = inputText.value;
+                    list.appendChild(myLi);
+
+                    // create span
+                    const mySpan = document.createElement('span');
+                    mySpan.innerHTML = '.';
+                    myLi.appendChild(mySpan);
+                }
+                const close = document.querySelectorAll('span');
+                for(let i=0; i<close.length; i++){
+                    close[i].addEventListener('click', ()=>{
+                        close[i].parentElement.style.opacity = 0;
+                        setTimeout(()=>{
+                             close[i].parentElement.style.display = "none";
+                             close[i].parentElement.remove;
+                        }, 150);
+                       
+                    })
+                }
+                inputText.value = "";
+            });
+        </script>
+
+         <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+<script src="firebase.js"></script>
+<script src="welcome.js"></script>
+    </body>
+</html>
