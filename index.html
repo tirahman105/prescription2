@@ -33,7 +33,8 @@
           <div class="col-md-6">
             <div class="myLeftCtn">
               <form  onsubmit="login()" id="login-form" class="myForm text-center">
-                <h1>Create new account</h1>
+              <span id="error" style="color:red;"> </span>  
+              <h1>Login Form</h1>
                 <div class="form-group">
                   <i class="fas fa-envelope"></i>
                   <label for="email"></label>
@@ -45,6 +46,7 @@
                   <label for="password"></label>
                   <input class="myInput" type="password" placeholder="password" id="password" required>
                 </div>
+                <a href= "#" onclick="forgotPass()"> Forgot password? </a>
                 <!-- <input id="sign-in-button" type="button" class="butt" value="Sign in"> -->
                  <button  type="submit" class="butt" value="">Sign in</button>
                <!--  <button id="create-newuser-button" type="button" class="butt" value="">Register now!</button> -->
